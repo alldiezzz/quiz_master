@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 
-
+# for make front end more clean code
+gem 'slim'
 # for unit testing using rspec
 gem 'rspec-rails'
 # for create fake data on database test
