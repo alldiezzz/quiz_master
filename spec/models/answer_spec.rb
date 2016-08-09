@@ -1,0 +1,2 @@
+describe Answer do
+end
