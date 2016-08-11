@@ -1,0 +1,21 @@
+| List questions
+br
+table
+	tr 
+		td
+			| Email
+		td
+			| Question
+		td
+			| Available Answer
+		td
+			| actions
+	- questions.each do |question|
+		tr
+			td
+				= question.user.email 
+			td
+				= question.question
+			td	
+				= question.answers
+	

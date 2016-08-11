@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# add devise for user authentication 
+gem 'devise'
 # for make front end more clean code
 gem 'slim'
 # for unit testing using rspec
