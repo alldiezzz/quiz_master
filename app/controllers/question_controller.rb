@@ -1,17 +1,29 @@
 class QuestionController < ApplicationController
-	def index
-		@questions = Question.get_questions
-	end
+    before_action :authenticate_user! 
 
-	def new
-	end
-	
-	def edit
-	end
+    def index
+        @questions = Question.get_questions
+    end
 
-	def destroy
-		question = Question.find(params[:id])
-		question.destroy
-		redirect_to question_path
-	end
+    def new
+        @question = Question.new
+        @form_url = question_create_path
+    end
+    
+    def create
+       Question.create(question_params)
+    end
+
+    def edit
+    end
+
+    def destroy
+        Question.destroy(params[:id]) if params[:id]
+        redirect_to question_path
+    end
+
+    private
+    def question_params
+        params.require(:question).permit(:id, :question, :answers, :user_id)
+    end
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'question/new' => "question#new"
   get 'question/edit/:id' => 'question#edit'
   delete 'question/destroy/:id' => 'question#destroy'
+  post 'question/create' => 'question#create'
 end
 
 
