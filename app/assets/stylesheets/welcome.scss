@@ -2,10 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.welcome_index {
+html {
   background: asset-data-url('welcome.jpg');
-  background-size: 100% 100%;
   background-repeat: no-repeat;
-  min-width: 800px;
-  min-height: 600px;	
+  background-size: cover;
+}
+
+.welcome_index {
+	background-color: black;
+	min-height: 650px;
+	background-color: rgba(0,0,0,0.3);
+
+	&__title {
+		text-align: center;
+		font-size: 90px;
+		color: white;
+		padding-top: 100px
+	}
+	
+	&__button_left {
+		display: block;
+		float:left;
+		width: 52%;
+		border-radius: 4px;
+		margin-right: 2px;
+		a {
+			height: 40px;
+			padding: 25px;
+			float: right;
+			background-color: #1f96ff;
+			cursor: pointer;
+			border-radius: 2px;
+			box-shadow: 0px 0px 2px 0px;
+			text-decoration: none;
+			font-size: 32px;
+			color: white;
+		}
+		
+	}
+
+	&__button_right {
+		display: block;
+		float:left;
+		width:46%;
+		border-radius: 4px;
+		margin-left: 2px;
+		margin-top: 27px;
+		a {
+			height: 40px;
+			padding: 25px;
+			background-color: #1f96ff;
+			cursor: pointer;
+			border-radius: 2px;
+			box-shadow: 0px 0px 2px 0px;
+			text-decoration: none;
+			font-size: 32px;
+			color: white;
+		}
+	}
+
+}
+
+
+.overlay {
+	min-height: 650px;
+	background-color: rgba(0,0,0,0.3);
 }
