@@ -1,11 +1,1 @@
-= form_for @question, url: @form_url do |f|
-    li
-        fieldset
-            = f.label :question
-            = f.text_field :question
-    li
-        fieldset
-            = f.label :answers
-            = f.text_field :answers
-    li
-        = f.submit "create"
+= render 'form'

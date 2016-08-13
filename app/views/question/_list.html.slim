@@ -8,8 +8,6 @@ table
 			| Question
 		td
 			| Available Answer
-		td
-			| actions
 	- questions.each do |question|
 		tr
 			td
@@ -18,4 +16,8 @@ table
 				= question.question
 			td	
 				= question.answers
-	
+			td
+				= link_to "Edit", action: 'edit', id: question.id
+			td
+			        = link_to "Remove", question_path(question.id), method: :delete, data: { confirm: 'are you sure delete this data?' }
+= link_to "New Question", action: :new 

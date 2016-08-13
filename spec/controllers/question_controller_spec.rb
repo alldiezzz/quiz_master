@@ -67,4 +67,16 @@ describe QuestionController, type: :controller do
             
         end
     end
+
+    describe "#update" do
+        it "success update a data" do
+            sign_in user
+            patch :update, id: question.id,  question: { question: "berubah", answers: "ubah" }
+            question.reload
+            expect(question.question).to eq("berubah")
+            expect(question.answers).to eq("ubah")
+            expect(response.status).to eq(302)
+        end
+
+    end
 end

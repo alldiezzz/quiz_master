@@ -1,23 +1,11 @@
-| List questions
-br
-table
-	tr 
-		td
-			| Email
-		td
-			| Question
-		td
-			| Available Answer
-		td
-			| actions
-	- questions.each do |question|
-		tr
-			td
-				= question.user.email 
-			td
-				= question.question
-			td	
-				= question.answers
-			td
-				= link_to "Edit", action: 'edit', id: question.id
-= link_to "New Question", action: :new 
+= form_for @question, url: @form_url do |f|
+    li
+        fieldset
+            = f.label :question
+            = f.text_field :question
+    li
+        fieldset
+            = f.label :answers
+            = f.text_field :answers
+    li
+        = f.submit "create"
