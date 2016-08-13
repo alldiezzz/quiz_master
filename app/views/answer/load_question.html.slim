@@ -1,14 +1,16 @@
- = form_for @answer, url: @form_url do |f|
+ = form_tag @form_url
     ul
-        @question.each do |question|
+        - counter = 0
+        - @questions.each do |question|
+            - counter += 1
+            li
+                = question.question
+                = hidden_field_tag "answer[correct]", nil
+                = hidden_field_tag "question_ids[#{counter}]", question.id
             li
                 fieldset
-                    = f.label :question
-                    = f.text_field :question_id, question.question
-            li
-                fieldset
-                    = f.label :answer
-                    = f.text_field :answer
+                    = label_tag :answer
+                    = text_field_tag "answer_par[#{counter}]"
     ul
         li
-            = f.submit "create"
+            = submit_tag "create"

@@ -1,1 +1,29 @@
- 
+table
+    tr
+        td
+            | No
+        td
+            | Question
+        td
+            | User Email
+        td
+            | Correct Answer
+        td
+            | Your Answer
+        td
+            | Status
+    - counter = 0
+    - @answers.each do |answer|
+        tr
+            td
+                = counter += 1
+            td
+                = answer.question.question
+            td
+                = answer.user.email
+            td
+                = answer.question.answers
+            td
+                = answer.answer
+            td
+                = answer.correct

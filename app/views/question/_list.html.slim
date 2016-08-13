@@ -1,23 +1,28 @@
 | List questions
 br
 table
-	tr 
-		td
-			| Email
-		td
-			| Question
-		td
-			| Available Answer
-	- questions.each do |question|
-		tr
-			td
-				= question.user.email 
-			td
-				= question.question
-			td	
-				= question.answers
-			td
-				= link_to "Edit", action: 'edit', id: question.id
-			td
-			        = link_to "Remove", question_path(question.id), method: :delete, data: { confirm: 'are you sure delete this data?' }
-= link_to "New Question", action: :new 
+    tr
+        td
+            | No
+        td
+            | Email
+        td
+            | Question
+        td
+            | Available Answer
+    - counter = 0
+    - questions.each do |question|
+        tr
+            td
+                = counter += 1
+            td
+                = question.user.email
+            td
+                = question.question
+            td
+                = question.answers
+            td
+                = link_to "Edit", action: 'edit', id: question.id
+            td
+                = link_to "Remove", question_path(question.id), method: :delete, data: { confirm: 'are you sure delete this data?' }
+= link_to "New Question", action: :new
