@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# add marionette gem
+gem 'marionette-rails'
 # add devise for user authentication 
 gem 'devise'
 # for make front end more clean code

@@ -17,3 +17,5 @@
 .byebug_history
 # Ignore .swp file
 *.swp
+# ignoer node_modules
+/node_modules/
