@@ -1,16 +1,14 @@
- = form_tag @form_url
-    ul
-        - counter = 0
-        - @questions.each do |question|
-            - counter += 1
-            li
-                = question.question
-                = hidden_field_tag "answer[correct]", nil
-                = hidden_field_tag "question_ids[#{counter}]", question.id
-            li
-                fieldset
-                    = label_tag :answer
-                    = text_field_tag "answer_par[#{counter}]"
-    ul
-        li
-            = submit_tag "create"
+.login-page
+	.form
+		| Question
+		= form_tag @form_url, class: "login-form"
+			- counter = 0
+			- @questions.each do |question|
+				- counter += 1
+				.answer_box
+					= question.question
+					= hidden_field_tag "answer[correct]", nil
+					= hidden_field_tag "question_ids[#{counter}]", question.id
+
+					= text_field_tag "answer_par[#{counter}]"
+		= submit_tag "create"
