@@ -1,0 +1,14 @@
+ = form_for @answer, url: @form_url do |f|
+    ul
+        @question.each do |question|
+            li
+                fieldset
+                    = f.label :question
+                    = f.text_field :question_id, question.question
+            li
+                fieldset
+                    = f.label :answer
+                    = f.text_field :answer
+    ul
+        li
+            = f.submit "create"
