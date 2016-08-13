@@ -1,11 +1,7 @@
-= form_for @question, url: @form_url do |f|
-    li
-        fieldset
-            = f.label :question
-            = f.text_field :question
-    li
-        fieldset
-            = f.label :answers
-            = f.text_field :answers
-    li
-        = f.submit "create"
+.login-page
+	.form
+		= form_for @question, url: @form_url, class:"login-form" do |f|
+			= f.text_field :question, placeholder: "Input Your Question"
+			em = "(if your question have more than one answer plase separate answer with coma(,))" 
+			= f.text_field :answers, placeholder: "Input Your Answer"
+			= f.submit "Create New Question"
